@@ -37,20 +37,29 @@ Palpite Ana: 751
 Computador: Ana ganhou! */
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class adivnum {
     public static void main(String[] args) {
-        Scanner ler = new Scanner(System.in); //Instanciando e criando um objeto Scanner
         String fraseUm, fraseDois;
 
-        ler.nextLine(); // esvazia o buffer do teclado
+        Scanner texto = new Scanner(System.in); //Instanciando e criando um objeto Scanner
+        Random r = new Random();
+
         System.out.println("Digite o nome do 1° jogador:"); 
-        fraseUm = ler.nextLine();
-
-        ler.nextLine(); // esvazia o buffer do teclado
+        fraseUm = texto.nextLine();
+        
         System.out.println("Digite o nome do 2° jogador:"); 
-        fraseDois = ler.nextLine();
+        fraseDois = texto.nextLine();
 
-        System.out.println("1° jogador : " + fraseUm + " " + "2° jogador: " + fraseDois);
+        System.out.println("1° jogador: " + fraseUm + " 2° jogador: " + fraseDois);
+
+
+        int valor = (r.nextInt(1000)+1); //Gerando um número aleatório entre 1 e 1000;
+
+        System.out.println("O número aleatório gerado é: " + valor); //Testando para ver se o valor foi gerado
+
+        texto.close();
     }
 }
+
