@@ -42,8 +42,10 @@ import java.util.Random;
 public class adivnum {
     public static void main(String[] args) {
         String fraseUm, fraseDois;
+        int palpiteUm, palpiteDois;
 
         Scanner texto = new Scanner(System.in); //Instanciando e criando um objeto Scanner
+        Scanner palp = new Scanner(System.in);
         Random r = new Random();
 
         System.out.println("Digite o nome do 1° jogador:"); 
@@ -57,9 +59,41 @@ public class adivnum {
 
         int valor = (r.nextInt(1000)+1); //Gerando um número aleatório entre 1 e 1000;
 
-        System.out.println("O número aleatório gerado é: " + valor); //Testando para ver se o valor foi gerado
+       //System.out.println("O número aleatório gerado é: " + valor); //Testando para ver se o valor foi gerado
 
         texto.close();
+
+        do {
+            System.out.println("Digite o seu palpite ("+fraseUm+")");
+            palpiteUm = palp.nextInt();
+
+            if (palpiteUm > valor)
+            {
+                System.out.println("Seu palpite é maior que o número sorteado.");
+            } else {
+                if(palpiteUm < valor) {
+                    System.out.println("Seu palpite é menor que o número sorteado.");
+                } else {
+                    System.out.println("Parabéns jogador, "+fraseUm+"!! Você acertou! O número era " + valor);
+                    palp.close();
+                }
+            }
+            System.out.println("Digite o seu palpite ("+fraseUm+")");
+            palpiteDois = palp.nextInt();
+
+            if (palpiteDois > valor) {
+                System.out.println("Seu palpite é maior que o número sorteado.");
+            } else {
+                if(palpiteDois < valor) {
+                    System.out.println("Seu palpite é menor que o número sorteado.");
+                } else {
+                    System.out.println("Parabéns jogador, "+fraseDois+"!! Você acertou! O número era " + valor);
+                    palp.close();
+                }
+            }
+
+
+
+        }while ((palpiteUm != valor) || (palpiteDois != valor));
     }
 }
-
