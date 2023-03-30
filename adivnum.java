@@ -42,7 +42,7 @@ import java.util.Random;
 public class adivnum {
     public static void main(String[] args) {
         String fraseUm, fraseDois;
-        int palpiteUm, palpiteDois;
+        int palpite;
 
         Scanner texto = new Scanner(System.in); //Instanciando e criando um objeto Scanner
         Scanner palp = new Scanner(System.in);
@@ -54,46 +54,42 @@ public class adivnum {
         System.out.println("Digite o nome do 2° jogador:"); 
         fraseDois = texto.nextLine();
 
-        System.out.println("1° jogador: " + fraseUm + " 2° jogador: " + fraseDois);
+        System.out.println("\n1° jogador: " + fraseUm + " 2° jogador: " + fraseDois+"\n");
 
 
         int valor = (r.nextInt(1000)+1); //Gerando um número aleatório entre 1 e 1000;
 
-       //System.out.println("O número aleatório gerado é: " + valor); //Testando para ver se o valor foi gerado
-
-        texto.close();
+       System.out.println("O número aleatório gerado é: " + valor); //Testando para ver se o valor foi gerado
 
         do {
             System.out.println("Digite o seu palpite ("+fraseUm+")");
-            palpiteUm = palp.nextInt();
+            palpite = palp.nextInt();
 
-            if (palpiteUm > valor)
-            {
+            if (palpite > valor) {
                 System.out.println("Seu palpite é maior que o número sorteado.");
-            } else {
-                if(palpiteUm < valor) {
+            } 
+            else if (palpite < valor) {
                     System.out.println("Seu palpite é menor que o número sorteado.");
                 } else {
                     System.out.println("Parabéns jogador, "+fraseUm+"!! Você acertou! O número era " + valor);
-                    palp.close();
+                    System.exit(0);
                 }
-            }
-            System.out.println("Digite o seu palpite ("+fraseUm+")");
-            palpiteDois = palp.nextInt();
 
-            if (palpiteDois > valor) {
+            System.out.println("\nDigite o seu palpite ("+fraseDois+")");
+            palpite = palp.nextInt();
+
+            if (palpite > valor) {
                 System.out.println("Seu palpite é maior que o número sorteado.");
-            } else {
-                if(palpiteDois < valor) {
-                    System.out.println("Seu palpite é menor que o número sorteado.");
-                } else {
-                    System.out.println("Parabéns jogador, "+fraseDois+"!! Você acertou! O número era " + valor);
-                    palp.close();
-                }
             }
+           else if(palpite < valor) {
+                System.out.println("Seu palpite é menor que o número sorteado.");
+            } else {
+                System.out.println("Parabéns jogador, "+fraseDois+"!! Você acertou! O número era " + valor);
+                System.exit(0);
+            }
+        }while (palpite != valor);
 
-
-
-        }while ((palpiteUm != valor) || (palpiteDois != valor));
+        texto.close();
+        palp.close();
     }
 }
