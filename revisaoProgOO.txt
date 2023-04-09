@@ -1,0 +1,21 @@
+Procedural: Costumamos 'programar' a partir das ações.
+
+O que é Objeto ?
+ . Algo perceptível, conhecido, pensado ou representado, por qualquer um dos nossos sentidos, em caráter estável.
+ . Pode ser físico, ou puramente mental. Ex: Carro, caneta, conta, aula...
+ . Instância de uma classe.
+
+OO - Programamos a partir de 'substantivos' que chamamos de concretos e 'verbos' que chamamos de abstratos.
+ . Procuramos imitar na estrutura do programa a forma como enxergamos os elementos do contexto-problema observado.
+
+O que é Classe ?
+ . Abstração do objeto do mundo real, como um modelo simplificado para ser representado no computador. Definem as características/comportamentos afins de todos os objetos pertencentes a essa classe.
+ . A partir de uma classe, podemos criar 1 ou mais objetos.
+
+Encapsulamento: Capacidade de esconder detalhes da implementação.
+
+Acomplamento: Quanto menos um objeto-usuário souber dos detalhes daimplementação de um objeto receptor da mensagem, menos o objeto-usuário será afetado por eventuais alterações no receptor.
+
+Coesão: Medida que determina o quão objetivo é o propósito de uma classe. Quanto mais coesa, menor o nível de acomplamento com outras classes.
+
+A herança quebra o encapsulamento. O reúso por herança expõe, para a subclasse (ou filha), detalhes da implementação herdados da super classe (ou pai), portanto quebrando o encapsulamento. Entretanto, isso não invalida o uso da herança, contanto que seja aplicada com muito cuidado.
