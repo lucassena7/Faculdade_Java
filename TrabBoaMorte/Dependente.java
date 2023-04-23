@@ -19,7 +19,7 @@ public class Dependente {
 	}
 	
 	public double getValorMensalidade() {
-		return idade < 18 ? 100 : 150;
+		return idade < 18 ? 250 : 350;
 	}
 
 }
